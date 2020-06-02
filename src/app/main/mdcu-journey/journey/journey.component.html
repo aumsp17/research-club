@@ -1,0 +1,26 @@
+<div fxLayout="column" fxFlexOffset="3em" fxLayoutGap="3em" style="width:100%;padding:3em;background-color:white">
+  <div fxLayout="row" fxLayoutAlign="space-evenly" fxLayoutGap="3em">
+    <section fxFlex="50" fxLayout="column" appAnimate="fadeInRight" speed="fast" aos>
+      <h1 class="mat-display-1" style="font-family: 'Emblema One';font-size:48px">
+        {{name}}
+      </h1>
+      <p style="font-size:24px;white-space:pre-line">
+        {{description}}
+      </p>
+    </section>
+    <section fxFlex="50" fxLayout="column" fxLayoutAlign="center" appAnimate="fadeInLeft" speed="normal" aos>
+      <div style="margin:auto;display:block;">
+        <img [src]="imageUrl" style="width:100%;" />
+      </div>
+      <div style="margin:auto;display:block">
+        {{caption}}
+      </div>
+    </section>
+  </div>
+  <div fxLayout="column" *ngFor="let content of contents" style="font-size:24px">
+    <b>{{content.question}}</b>
+    <div>
+      {{content.answer}}
+    </div>
+  </div>
+</div>

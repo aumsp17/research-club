@@ -1,0 +1,77 @@
+<div fxLayout="column" fxFlexOffset="3em" fxLayoutGap="3em" style="width:100%;padding:3em;background-color:white">
+  <div fxLayout="column" fxLayoutGap="3em" *ngIf="upcomingTalk$ | async as talk">
+    <div>
+      <section fxLayout="column" class="banner" appAnimate="fadeInLeft" speed="fast" aos>
+        <h1 class="mat-display-1" style="font-family: 'Emblema One';font-size:48px;margin:0">
+          Upcoming Talk
+        </h1>
+      </section>
+    </div>
+    <div fxLayoutAlign="center" fxLayoutGap="3em">
+      <div fxFlex="50" fxLayoutAlign="end">
+        <img src="{{talk.imageUrl.poster}}" style="max-height: 50vh;max-width:40vw" />
+      </div>
+      <div gdAreas="topicLabel topic | timeLabel time" gdAlignColumns="start" gdGap="1em">
+        <div gdArea="topicLabel">
+          <h1 class="mat-h1" style="word-wrap:break-word">
+            <b>Topic: </b>
+          </h1>
+        </div>
+        <div gdArea="topic">
+          <h1 class="mat-h1" style="word-wrap:break-word;margin:0">
+            {{talk.topic}}
+          </h1>
+        </div>
+        <div gdArea="timeLabel">
+          <h1 class="mat-h1">
+          <b>Time: </b>
+          </h1>
+        </div>
+        <div gdArea="time">
+          <h1 class="mat-h1">
+            {{talk.date.toDate() | date: 'dd/MM/yyyy hh:mm'}}
+          </h1>
+        </div>
+      </div>
+      <!--<div gdAuto="row" gdAlignColumns="start">
+        <div gdAuto="column" fxLayoutAlign="start">
+          <h1 class="mat-h1" style="word-wrap:break-word">
+            <b>Topic: </b>
+          </h1>
+          <h1 class="mat-h1" style="word-wrap:break-word;margin:0">
+            {{talk.topic}}
+          </h1>
+        </div>
+        <div gdAuto="column" fxLayoutAlign="start">
+          <h1 class="mat-h1">
+            <b>Time: </b>
+          </h1>
+          <h1 class="mat-h1">
+            {{talk.date.toDate() | date: 'dd/MM/yyyy hh:mm'}}
+          </h1>
+        </div>
+      </div>-->
+    </div>
+  </div>
+  <div fxFlexOffset="3em">
+    <section fxLayout="column" class="banner" appAnimate="fadeInLeft" speed="fast" aos>
+      <h1 class="mat-display-1" style="font-family: 'Emblema One';font-size:48px;margin:0">
+        Previous Talks
+      </h1>
+    </section>
+  </div>
+  <div gdColumns="repeat(4, [col] 20vw" gdGap="5vw">
+    <mat-card class="hoverable" style="width:20vw"  *ngFor="let talk of talks$ | async" [routerLink]="[talk.$key]">
+      <img mat-card-image [src]="talk.imageUrl.thumbnail"/>
+      <mat-card-header>
+        <mat-card-title class="verticalcut">{{talk.topic}}</mat-card-title>
+        <div mat-card-avatar style="background-size:cover;background-image:url({{talk.imageUrl.avatar}})"></div>
+        <mat-card-subtitle>
+          {{talk.speaker.name.en}}
+          <br />
+          {{talk.views}} views • {{talk.date.toDate() | date: 'dd/MM/yyyy'}}
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>

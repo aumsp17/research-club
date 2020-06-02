@@ -1,0 +1,37 @@
+<img class="parallax" appParallax ratio="0.7" src="assets/images/banner-lab.png" style="min-width:100%;min-height: 400px;top:0px;" />
+<div fxLayout="column" fxFlexOffset="3em" fxLayoutGap="1em" style="width:100%;">
+  <div style="padding:3em;">
+    <section fxLayout="column" class="banner" appAnimate="fadeInRight" speed="fast" aos>
+      <h1 class="mat-display-1" style="font-family: 'Emblema One';color:white">Gallery</h1>
+      <div style="width:25vw;min-width:500px;color:white">
+        All the fun memories we have. So memorable we wanna share...
+      </div>
+    </section>
+  </div>
+  <div fxLayout="column" fxLayoutGap="1em" style="width:100%;background-color:white;padding:3em">
+    <div fxFlexOffset="3em">
+      <section fxLayout="column" class="banner" appAnimate="fadeInRight" speed="fast" aos>
+        <h1 class="mat-display-1" style="font-family: 'Emblema One';font-size:48px">Journal club</h1>
+      </section>
+    </div>
+    <div gdAuto="row" gdColumns="repeat(2, 40%)" gdColumns.gt-sm="repeat(5, 16%)" gdRows="repeat(1, 1fr)" gdAlignRows="center center" gdGap="4%">
+      <div gdAuto *ngFor="let image of journalImages$ | async">
+        <div class="hoverable" (click)="imageClick(image.imageUrl)">
+          <img [src]="image.imageUrl" style="width:100%" />
+        </div>
+      </div>
+    </div>
+    <div fxFlexOffset="3em">
+      <section fxLayout="column" class="banner" appAnimate="fadeInRight" speed="fast" aos>
+        <h1 class="mat-display-1" style="font-family: 'Emblema One';font-size:48px">Research workshop</h1>
+      </section>
+    </div>
+    <div gdAuto="row" gdColumns="repeat(2, 40%)" gdColumns.gt-sm="repeat(5, 16%)" gdRows="repeat(1, 1fr)" gdAlignRows="center center" gdGap="4%">
+      <div gdAuto *ngFor="let image of workshopImages$ | async">
+        <div class="hoverable" (click)="imageClick(image.imageUrl)">
+          <img [src]="image.imageUrl" style="width:100%" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

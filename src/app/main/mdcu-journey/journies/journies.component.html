@@ -1,0 +1,90 @@
+<div fxLayout="column" fxFlexOffset="3em" fxLayoutGap="3em" style="width:100%;padding:3em;background-color:white">
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <mat-card style="max-width:15vw">
+      <mat-card-header>
+        <mat-card-title>Nattacha Srithawatpong</mat-card-title>
+        <mat-card-subtitle>MDCU74 Student</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="assets/images/bell.jpg" />
+      <mat-card-content>
+        <div style="text-shadow:none">
+          In one lecture others thought was so boring, her eyes shine bright. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et diam sapien. Suspendisse potenti. Quisque dignissim odio vel placerat mollis. Integer nec libero commodo, imperdiet risus eu, malesuada elit. Proin. The journey takes her a long way in her career.
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Read more</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card style="max-width:15vw">
+      <mat-card-header>
+        <mat-card-title>Nattacha Srithawatpong</mat-card-title>
+        <mat-card-subtitle>MDCU74 Student</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="assets/images/bell.jpg" />
+      <mat-card-content>
+        <div style="text-shadow:none">
+          In one lecture others thought was so boring, her eyes shine bright. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et diam sapien. Suspendisse potenti. Quisque dignissim odio vel placerat mollis. Integer nec libero commodo, imperdiet risus eu, malesuada elit. Proin. The journey takes her a long way in her career.
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Read more</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card style="max-width:15vw">
+      <mat-card-header>
+        <mat-card-title>Nattacha Srithawatpong</mat-card-title>
+        <mat-card-subtitle>MDCU74 Student</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="assets/images/bell.jpg" />
+      <mat-card-content>
+        <div style="text-shadow:none">
+          In one lecture others thought was so boring, her eyes shine bright. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et diam sapien. Suspendisse potenti. Quisque dignissim odio vel placerat mollis. Integer nec libero commodo, imperdiet risus eu, malesuada elit. Proin. The journey takes her a long way in her career.
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Read more</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card style="max-width:15vw">
+      <mat-card-header>
+        <mat-card-title>Nattacha Srithawatpong</mat-card-title>
+        <mat-card-subtitle>MDCU74 Student</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="assets/images/bell.jpg" />
+      <mat-card-content>
+        <div style="text-shadow:none">
+          In one lecture others thought was so boring, her eyes shine bright. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et diam sapien. Suspendisse potenti. Quisque dignissim odio vel placerat mollis. Integer nec libero commodo, imperdiet risus eu, malesuada elit. Proin. The journey takes her a long way in her career.
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Read more</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div>
+    <section fxLayout="column" class="banner" appAnimate="fadeInLeft" speed="fast" aos>
+      <h1 class="mat-display-1" style="font-family: 'Emblema One';text-align:right;font-size:48px;margin:0">
+        Dreams will never come true
+        <br />
+        if you don't start...
+      </h1>
+    </section>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <mat-card style="max-width:15vw" *ngFor="let journey of journies$ | async">
+      <mat-card-header>
+        <mat-card-title>{{journey.name.full.en}}</mat-card-title>
+        <mat-card-subtitle>MDCU{{journey.year}} Student</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="journey.profile.imageUrl" />
+      <mat-card-content>
+        <div style="text-shadow:none">
+          {{journey.profile.caption}}
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [routerLink]="[journey.$key]">Read more</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

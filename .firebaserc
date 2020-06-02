@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "research-club-49df3"
+  },
+  "targets": {
+    "research-club-49df3": {
+      "hosting": {
+        "research-club": [
+          "research-club-49df3"
+        ]
+      }
+    }
+  }
+}
